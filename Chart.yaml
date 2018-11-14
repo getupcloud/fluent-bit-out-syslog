@@ -1,0 +1,20 @@
+name: fluent-bit-out-syslog
+version: 0.16.1
+appVersion: 0.14.6
+description: Fast and Lightweight Log/Data Forwarder for Linux, BSD and OSX
+keywords:
+- logging
+- monitoring
+- fluent
+- fluentd
+sources:
+- http://fluentbit.io
+icon: http://fluentbit.io/assets/img/logo1-default.png
+home: http://fluentbit.io
+maintainers:
+- name: kfox1111
+  email: Kevin.Fox@pnnl.gov
+- name: edsiper
+  email: eduardo@treasure-data.com
+- name: caruccio
+  email: mateus.caruccio@getupcloud.com

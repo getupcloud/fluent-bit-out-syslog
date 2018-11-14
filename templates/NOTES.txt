@@ -1,0 +1,6 @@
+fluent-bit is now running.
+
+{{- if eq .Values.backend.type "syslog" }}
+
+It will forward all container logs to the svc named {{ .Values.backend.syslog.host }} on port: {{ .Values.backend.syslog.port }}
+{{- end }}
