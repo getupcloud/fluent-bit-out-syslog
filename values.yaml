@@ -10,13 +10,13 @@ image:
 
 # When enabled, exposes json and prometheus metrics on {{ .Release.Name }}-metrics service
 metrics:
-  enabled: false
+  enabled: true
   service:
-    annotations: {}
-    # In order for Prometheus to consume metrics automatically use the following annotations:
-    # prometheus.io/path: "/api/v1/metrics/prometheus"
-    # prometheus.io/port: "2020"
-    # prometheus.io/scrape: "true"
+    annotations:
+      # In order for Prometheus to consume metrics automatically use the following annotations:
+      prometheus.io/path: "/api/v1/metrics/prometheus"
+      prometheus.io/port: "2020"
+      prometheus.io/scrape: "true"
     port: 2020
     type: ClusterIP
 
@@ -28,9 +28,6 @@ backend:
   syslog:
     host: syslog
     port: 5140
-    tls: "off"
-    tls_verify: "on"
-    namespace:
 
 parsers:
   enabled: false

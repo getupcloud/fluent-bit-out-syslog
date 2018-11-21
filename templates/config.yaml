@@ -55,15 +55,12 @@ data:
 {{- end }}
 {{ .Values.extraFilters | indent 8 }}
 
-    [OUTPUT]
-        Name stdout
-        Match *
-
-{{ if eq .Values.backend.type "test" }}
+{{ if eq .Values.backend.type "file" }}
     [OUTPUT]
         Name  file
         Match *
-        Path /tmp/fluent-bit.log
+        Path {{ .Values.backend.file.path  }}
+
 {{ else if eq .Values.backend.type "syslog" }}
     [OUTPUT]
         Name syslog
